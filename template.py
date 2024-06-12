@@ -111,12 +111,12 @@ def gitInitPush():
         commTemp = subprocess.Popen(["git", "commit" , "-m" , "Initial Commit"], stdout = subprocess.PIPE)
         commOutput = str(commTemp.communicate())
         print ("Output"+commOutput)
-        # remoAddTemp = subprocess.Popen(["git", "remote" , "add" , "origin","https://github.com/"+str(os.environ['GITHUB_USERNAME'])+"/"+str(sys.argv[1])], stdout = subprocess.PIPE)
-        # remAddOutput = str(remoAddTemp.communicate())
-        # print ("Output"+remAddOutput)
-        # remoPushTemp = subprocess.Popen(["git", "push" , "-u" , "origin","master"], stdout = subprocess.PIPE)
-        # remPushOutput = str(remoPushTemp.communicate())
-        # print ("Output"+remPushOutput)
+        remoAddTemp = subprocess.Popen(["git", "remote" , "add" , "origin","https://github.com/"+str(os.environ['GITHUB_USERNAME'])+"/"+str(sys.argv[1])], stdout = subprocess.PIPE)
+        remAddOutput = str(remoAddTemp.communicate())
+        print ("Output"+remAddOutput)
+        remoPushTemp = subprocess.Popen(["git", "push" , "-u" , "origin","master"], stdout = subprocess.PIPE)
+        remPushOutput = str(remoPushTemp.communicate())
+        print ("Output"+remPushOutput)
     except Exception as e:
         print(f"Exception in Git Init Push function"+""+str(e))
     else:
